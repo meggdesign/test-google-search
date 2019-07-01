@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver" Version="4.0.0-alpha01" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="75.0.3770.8-beta" />
+    <PackageReference Include="Selenium.Support" Version="4.0.0-alpha01" />
+    <PackageReference Include="SpecFlow" Version="3.0.213" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.1" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.0.213" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Features\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Features\GoogleSearchFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GoogleSearchFeature.feature.cs</LastGenOutput>
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Steps\GoogleSearchFeature.cs" />
+    <Compile Remove="Program.cs" />
+    <Compile Remove="Features\GoogleSearchFeature.feature.cs" />
+    <Compile Remove="Steps\GoogleSearchFeatureSteps.cs" />
+  </ItemGroup>
+</Project>
